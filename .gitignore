@@ -1,9 +1,15 @@
+[Bb]uild
+
 # =============== #
 # Unity generated #
 # =============== #
 /Temp
 /Library
 /Assets/AssetStoreTools*
+
+*.pidb.meta
+
+sysinfo.txt
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
