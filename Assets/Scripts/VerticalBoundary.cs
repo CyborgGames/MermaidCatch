@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class VerticalBoundary : MonoBehaviour {
 
-	[SerializeField]
-	int direction = 1;
+    [SerializeField]
+    int direction = 1;
 
-	void OnCollisionExit2D(Collision2D other)
-	{
-		if (other.gameObject.tag == "Ball") {
-			Debug.Log("Collided with ball.");
-			float adjust = direction * 10f;
-			other.rigidbody.AddForce(new Vector2(adjust, 0));
-		}
+    const float FORCE = 10f;
+    
+    void OnCollisionExit2D(Collision2D other)
+    {
+	if (other.gameObject.tag == "Ball") {
+
+	    // Debug.Log("Collided with ball.");
+
+	    other.rigidbody.AddForce(new Vector2(direction * FORCE, 0));
 	}
+    }
+
 }

@@ -4,6 +4,7 @@ public class GameManager : Singleton<GameManager> {
 
     public GameObject Arena { get; set; }
     public ScoreUI ScoreCanvas { get; set; }
+
     public GameObject Player2 { get; set; }
 
     void Start () {
@@ -19,17 +20,18 @@ public class GameManager : Singleton<GameManager> {
     public void StartNewSinglePlayerGame() {
 	 SetupGame();
 	 Player2.GetComponent<Enemy>().enabled = true;
-	 Player2.GetComponent<Player2>().enabled = false;
+	 Player2.GetComponent<Player>().enabled = false;
      }
 
     public void StartNewMultiplayerGame() {
 	SetupGame();
 	Player2.GetComponent<Enemy>().enabled = false;
-	Player2.GetComponent<Player2>().enabled = true;
+	Player2.GetComponent<Player>().enabled = true;
     }
 
     void Update () {
-	//pauses or plays game when player hits p
+
+	// Pauses or plays game when player hits p
 	if (PressedPause()) {
 	    Time.timeScale = IsPaused() ? 1 : 0;
 	} 
