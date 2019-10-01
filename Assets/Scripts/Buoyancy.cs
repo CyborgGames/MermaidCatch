@@ -3,29 +3,30 @@ using UnityEngine;
 public class Buoyancy : MonoBehaviour
 {
 
-	Rigidbody2D rigidbody;
-	float force = 1.5f;
+    // The rigidbody of the buoyant object
+    Rigidbody2D rigidbody;
 
-	/// <summary>
-	/// Provides initialization.
-	/// </summary>
-	private void Start()
-	{
-		rigidbody = GetComponent<Rigidbody2D>();
-	}
+    // The force of buoyancy
+    float force = 1.5f;
 
-	/// <summary>
-	/// Calculates physics.
-	/// </summary>
-	private void FixedUpdate()
-	{
-		// If below the water level, float
-		if (transform.position.y < 0) {
-			rigidbody.AddForce(transform.up * force);
-		} else if (transform.position.y > 2) {
-			rigidbody.AddForce(transform.up * -force);
-		}
-		
+    void Start()
+    {
+	rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    void FixedUpdate()
+    {
+
+	if (transform.position.y < 0) {
+	    Float();
+	} else if (transform.position.y > 2) {
+	    rigidbody.AddForce(transform.up * -force);
 	}
+    }
+
+    // If below the water level, float
+    void Float() {
+	rigidbody.AddForce(transform.up * force);
+    }
 
 }
