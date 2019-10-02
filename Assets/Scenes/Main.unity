@@ -279,6 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persist: 0
+  Arena: {fileID: 1754211952}
+  Player2: {fileID: 732434505}
 --- !u!1 &291721703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2339,7 +2341,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: -100
   m_TargetDisplay: 0
@@ -2378,6 +2380,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persist: 0
+  BlueScore: {fileID: 2123114594}
+  RedScore: {fileID: 690297403}
+  GameOverText: {fileID: 1411383702}
 --- !u!1 &1557637793
 GameObject:
   m_ObjectHideFlags: 0
