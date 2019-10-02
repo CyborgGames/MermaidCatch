@@ -1447,8 +1447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca59cbed5e9f410aa5595121b8d6e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputAxis: Vertical-WASD
-  _speed: 6
 --- !u!114 &732434507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,6 +1460,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 6
+--- !u!114 &732434508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732434505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d6efed22dc0d8379c1780d1013c5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InputAxis: Vertical
+  _speed: 0.2
 --- !u!1001 &940594866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2831,6 +2843,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2137170391}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1984803875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984803874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d6efed22dc0d8379c1780d1013c5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InputAxis: Vertical
+  _speed: 0.2
 --- !u!114 &1984803876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2843,8 +2869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca59cbed5e9f410aa5595121b8d6e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputAxis: Vertical
-  _speed: 6
 --- !u!1 &2006655513
 GameObject:
   m_ObjectHideFlags: 0

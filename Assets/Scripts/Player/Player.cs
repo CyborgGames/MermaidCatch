@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 
 public class Player : MonoBehaviour {
-
-    public string InputAxis = "Vertical";
     
     int direction;
     float previousPositionY;
     
-    [SerializeField]
-    public float _speed = 0.2f;
-	
     const float BOTTOM_BOUND = -4.5f;
     float TOP_BOUND  = 4.5f;
     
@@ -29,14 +24,7 @@ public class Player : MonoBehaviour {
 		previousPositionY = transform.position.y;
     }
     
-    protected void Move() {
-		float vertical = 0;
-#if UNITY_STANDALONE || UNITY_WEBPLAYER
-		KeyboardMovement();
-#elif UNITY_IOS || UNITY_ANDROID 
-		TouchMovement();
-#endif
-		
+    protected void Move() {		
 		UpdateDirection();
 		SetBoundaries();
     }
@@ -57,23 +45,6 @@ public class Player : MonoBehaviour {
 		transform.position = new Vector3(transform.position.x, clampedY, 0);	
     }
 	
-    protected float GetScreenMidpointX() {
-		return Screen.width/2.0f;
-    }
 
-    // Get player input and set speed
-    protected void KeyboardMovement() {
-		float movementSpeedY = _speed * Input.GetAxis(InputAxis) * Time.deltaTime;
-		transform.Translate(0, movementSpeedY, 0);
-    }
-    
-    protected void TouchMovement() {
-		if (Input.touchCount > 0) {
-			Touch theTouch = Input.touches[0];
-			if (theTouch.phase == TouchPhase.Moved && theTouch.position.x > GetScreenMidpointX()) {
-				transform.Translate(0, theTouch.deltaPosition.y * 0.025f, 0);
-			}
-		}
-    }
 	
 }
