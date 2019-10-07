@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 namespace MermaidCatch {
+
 	public class GameManager : Singleton<GameManager> {
 		
 		public GameObject Arena;
@@ -53,7 +54,7 @@ namespace MermaidCatch {
 		public void HideArena() {
 			Arena.SetActive(false);
 		}
-		
+
 		public void ScoreRed() {
 			ScoreCanvas.ScoreRed();
 		}
