@@ -26,9 +26,9 @@ namespace MermaidCatch {
 
 			// Score a point
 			if (ball.position.x > MAX) {
-				GameManager.Instance.ScoreRed();
+				UIEvents.ScoreRed();
 			} else if (ball.position.x < MIN) {
-				GameManager.Instance.ScoreBlue();
+				UIEvents.ScoreBlue();
 			}	
 		}
 	

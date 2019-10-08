@@ -12,6 +12,14 @@ namespace MermaidCatch {
 		static int blueScore, redScore;
 		
 		const int SCORE_NEEDED_TO_WIN = 5;
+
+		void OnEnable() {
+			UIEvents.OnStartGame += ResetScore;
+		}
+
+		void OnDisable() {
+			UIEvents.OnStartGame -= ResetScore;
+		}
 		
 		public void ResetScore() {
 			blueScore = 0;

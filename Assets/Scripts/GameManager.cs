@@ -13,19 +13,8 @@ namespace MermaidCatch {
 		}
 		
 		public void SetupGame() {
-			ScoreUI.Instance.ResetScore();
 			UnPause();
 			
-			// Destroy all balls
-			BallSpawner.Reset();
-		}
-
-		public void ScoreRed() {
-			ScoreUI.Instance.ScoreRed();
-		}
-		
-		public void ScoreBlue() {
-			ScoreUI.Instance.ScoreBlue();
 		}
 		
 		public void UnPause() {

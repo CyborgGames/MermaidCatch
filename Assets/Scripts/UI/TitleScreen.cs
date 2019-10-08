@@ -6,11 +6,16 @@ namespace MermaidCatch {
 		
 		public void StartSinglePlayer() {
 			SceneController.Instance.SwitchScene("SinglePlayer");
+
+			UIEvents.StartGame();
 			GameManager.Instance.SetupGame();
 		}
 		
 		public void StartMultiPlayer() {
 			SceneController.Instance.SwitchScene("MultiPlayer");
+
+			UIEvents.StartGame();
+			
 			GameManager.Instance.SetupGame();
 		}
 		
