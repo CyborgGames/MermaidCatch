@@ -66,7 +66,9 @@ namespace MermaidCatch {
 			GameOverText.gameObject.SetActive(true);
 			GameOverText.text = string.Format("{0} wins!", playerName);
 			GameManager.Instance.Pause();
-			TitleScreen.Instance.ShowTitleScreen();
+
+			SceneController.Instance.SwitchScene("Title");
+
 		}
 	}
 	

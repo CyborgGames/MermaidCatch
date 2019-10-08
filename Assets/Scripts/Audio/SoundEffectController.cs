@@ -1,18 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SoundEffectController : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+namespace MermaidCatch {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public class SoundEffectController : SoundController
+	{
+
+		// Bind events
+		void OnEnable() {
+			AudioEvents.OnPlaySound += PlayClip;
+		}
+		
+		// Unbind events
+		void OnDisable() {
+			AudioEvents.OnPlaySound -= PlayClip;
+		}
+
+		public void PlayClip(string clipName) {
+			AudioClip clip = GetClipByName(clipName);
+
+			if (clip != null) {
+				audioSource.PlayOneShot(clip);
+			}
+		}
+	}
+
 }
