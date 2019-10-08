@@ -3,36 +3,7 @@
 namespace MermaidCatch {
 
 	public class GameManager : Singleton<GameManager> {
-		
-		public GameObject Arena;
-		public ScoreUI ScoreCanvas { get; set; }
-		
-		public GameObject Player2;
-		
-		void Start () {
-			ScoreCanvas = GameObject.FindObjectOfType<ScoreUI>();
-		
-			if (Arena != null) {
-				Arena.SetActive(false);
-			}
-
-			if (ScoreCanvas != null) {
-				ScoreCanvas.gameObject.SetActive(false);
-			}
-		}
-		
-		public void StartNewSinglePlayerGame() {
-			SetupGame();
-			Player2.GetComponent<Enemy>().enabled = true;
-			Player2.GetComponent<Player>().enabled = false;
-		}
-		
-		public void StartNewMultiplayerGame() {
-			SetupGame();
-			Player2.GetComponent<Enemy>().enabled = false;
-			Player2.GetComponent<Player>().enabled = true;
-		}
-	
+			
 		void Update () {
 			
 			// Pauses or plays game when player hits p
@@ -42,25 +13,19 @@ namespace MermaidCatch {
 		}
 		
 		public void SetupGame() {
-			Arena.SetActive(true);
-			ScoreCanvas.gameObject.SetActive(true);
-			ScoreCanvas.ResetScore();
+			ScoreUI.Instance.ResetScore();
 			UnPause();
 			
 			// Destroy all balls
 			BallSpawner.Reset();
 		}
-		
-		public void HideArena() {
-			Arena.SetActive(false);
-		}
 
 		public void ScoreRed() {
-			ScoreCanvas.ScoreRed();
+			ScoreUI.Instance.ScoreRed();
 		}
 		
 		public void ScoreBlue() {
-			ScoreCanvas.ScoreBlue();
+			ScoreUI.Instance.ScoreBlue();
 		}
 		
 		public void UnPause() {

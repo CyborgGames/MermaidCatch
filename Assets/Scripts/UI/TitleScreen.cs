@@ -5,13 +5,13 @@ namespace MermaidCatch {
 	public class TitleScreen : Singleton<TitleScreen> {
 		
 		public void StartSinglePlayer() {
-			HideTitleScreen();
-			GameManager.Instance.StartNewSinglePlayerGame();
+			SceneController.Instance.SwitchScene("SinglePlayer");
+			GameManager.Instance.SetupGame();
 		}
 		
 		public void StartMultiPlayer() {
-			HideTitleScreen();
-			GameManager.Instance.StartNewMultiplayerGame();
+			SceneController.Instance.SwitchScene("MultiPlayer");
+			GameManager.Instance.SetupGame();
 		}
 		
 		public void ShowTitleScreen() {
