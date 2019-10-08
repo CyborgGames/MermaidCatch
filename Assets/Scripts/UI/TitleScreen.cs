@@ -8,7 +8,7 @@ namespace MermaidCatch {
 			SceneController.Instance.SwitchScene("SinglePlayer");
 
 			UIEvents.StartGame();
-			GameManager.Instance.SetupGame();
+
 		}
 		
 		public void StartMultiPlayer() {
@@ -16,7 +16,6 @@ namespace MermaidCatch {
 
 			UIEvents.StartGame();
 			
-			GameManager.Instance.SetupGame();
 		}
 		
 		public void ShowTitleScreen() {

@@ -13,8 +13,9 @@ namespace MermaidCatch {
 
 		public SceneFader Fader;
 
+		// Use the Scene Controller pipeline to switch to the given scene
 		public void SwitchScene(string sceneName) {
-			if (SceneManager.GetActiveScene().name != sceneName) {
+			if (!IsActiveScene(sceneName)) {
 				StartCoroutine(FadeAndSwitchScenes(sceneName));
 			}
 		}
@@ -27,10 +28,12 @@ namespace MermaidCatch {
 			yield return LoadMainMenu();
 		}
 
+		// Load all UI scenes
 		IEnumerator LoadUI() {
 			yield return SceneManager.LoadSceneAsync(config.Score, LoadSceneMode.Additive);
 		}
 
+		// Load the main menu
 		IEnumerator LoadMainMenu() {
 			yield return StartCoroutine(Fader.FadeOut());
 
@@ -40,11 +43,7 @@ namespace MermaidCatch {
 		}
 				
 		IEnumerator LoadSceneAndSetActive(string sceneName) {
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-
-            // TODO: Show a loading screen
-
-            yield return asyncLoad;
+            yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 
             Scene newlyLoadedScene = SceneManager.GetSceneAt (SceneManager.sceneCount - 1);
             SceneManager.SetActiveScene (newlyLoadedScene);

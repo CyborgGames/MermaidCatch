@@ -15,10 +15,14 @@ namespace MermaidCatch {
 
 		void OnEnable() {
 			UIEvents.OnStartGame += ResetScore;
+			UIEvents.OnScoreRed += ScoreRed;
+			UIEvents.OnScoreBlue += ScoreBlue;
 		}
 
 		void OnDisable() {
 			UIEvents.OnStartGame -= ResetScore;
+			UIEvents.OnScoreRed -= ScoreRed;
+			UIEvents.OnScoreBlue -= ScoreBlue;
 		}
 		
 		public void ResetScore() {

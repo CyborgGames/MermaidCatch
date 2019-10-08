@@ -10,6 +10,7 @@ namespace MermaidCatch {
 
 		public static event Action OnStartGame;
 
+		// TODO: Make Generic
 		public static event Action OnScoreBlue;
 		public static event Action OnScoreRed;
 

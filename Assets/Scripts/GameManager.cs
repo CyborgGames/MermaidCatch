@@ -3,18 +3,21 @@
 namespace MermaidCatch {
 
 	public class GameManager : Singleton<GameManager> {
-			
+
+		void OnEnable() {
+			UIEvents.OnStartGame += UnPause;
+		}
+
+		void OnDisable() {
+			UIEvents.OnStartGame -= UnPause;
+		}
+
 		void Update () {
 			
 			// Pauses or plays game when player hits p
 			if (PressedPause()) {
 				Time.timeScale = IsPaused() ? 1 : 0;
 			} 
-		}
-		
-		public void SetupGame() {
-			UnPause();
-			
 		}
 		
 		public void UnPause() {
