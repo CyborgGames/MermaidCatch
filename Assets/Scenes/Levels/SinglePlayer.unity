@@ -254,6 +254,8 @@ GameObject:
   - component: {fileID: 438724707}
   - component: {fileID: 438724709}
   - component: {fileID: 438724708}
+  - component: {fileID: 438724710}
+  - component: {fileID: 438724711}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -352,6 +354,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &438724710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438724706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e7deafa4fd5b449a99c0badfebc1a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 0.2
+--- !u!114 &438724711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438724706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202eb62855f33d22aa70955ac2f8d9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &518919851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1125,6 +1152,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 940594866}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2135423635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135423634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202eb62855f33d22aa70955ac2f8d9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &2135423636
 BoxCollider2D:
   m_ObjectHideFlags: 0
