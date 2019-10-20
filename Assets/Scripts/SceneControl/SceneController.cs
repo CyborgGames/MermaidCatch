@@ -25,7 +25,13 @@ namespace MermaidCatch {
 
 			yield return LoadUI();
 
-			yield return LoadMainMenu();
+			
+			yield return StartCoroutine(Fader.FadeOut());
+
+			yield return StartCoroutine(LoadSceneAndSetActive(config.FirstLevel));
+										
+			yield return StartCoroutine(Fader.FadeIn());
+			
 		}
 
 		// Load all UI scenes
@@ -33,14 +39,6 @@ namespace MermaidCatch {
 			yield return SceneManager.LoadSceneAsync(config.Score, LoadSceneMode.Additive);
 		}
 
-		// Load the main menu
-		IEnumerator LoadMainMenu() {
-			yield return StartCoroutine(Fader.FadeOut());
-
-			yield return StartCoroutine(LoadSceneAndSetActive(config.Title));
-										
-			yield return StartCoroutine(Fader.FadeIn());
-		}
 				
 		IEnumerator LoadSceneAndSetActive(string sceneName) {
             yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);

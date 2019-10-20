@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8668f8136172b0ad930cfd9e96d4cf7, type: 3}
   m_Name: Config
   m_EditorClassIdentifier: 
-  FirstLevel: Main
+  FirstLevel: SinglePlayer
   Title: Title
   Score: Score

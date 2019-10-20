@@ -6,8 +6,8 @@ namespace MermaidCatch {
 	public class Boundary : MonoBehaviour {
 
 		// Min and max coordinates of the game
-		const float MAX = 6f;
-		const float MIN = -6f;
+		const float MAX = 4f;
+		const float MIN = -4f;
 		
 		void OnTriggerEnter2D (Collider2D other) {
 			if (other.GetComponent<Ball>() != null) {
