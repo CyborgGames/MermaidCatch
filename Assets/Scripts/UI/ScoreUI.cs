@@ -65,10 +65,12 @@ namespace MermaidCatch {
 		void PlayerWins(string playerName) {
 			GameOverText.gameObject.SetActive(true);
 			GameOverText.text = string.Format("{0} wins!", playerName);
-			GameManager.Instance.Pause();
+			// GameManager.Instance.Pause();
 
+			Debug.Log("Switching scene to Title");
 			SceneController.Instance.SwitchScene("Title");
 
+			
 		}
 	}
 	

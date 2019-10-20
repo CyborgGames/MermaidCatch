@@ -13,10 +13,29 @@ namespace MermaidCatch {
 
 		public SceneFader Fader;
 
+		public void ToMainMenu() {
+			StartCoroutine(LoadMainMenu());
+		}
+		
+		IEnumerator LoadMainMenu() {
+			Debug.Log("Fading in");
+			
+			yield return StartCoroutine(Fader.FadeOut());
+
+			Debug.Log("Loading Title");
+			yield return StartCoroutine(LoadSceneAndSetActive(config.Title));
+
+			Debug.Log("Fading out");
+			
+			yield return StartCoroutine(Fader.FadeIn());
+		
+		}
 		// Use the Scene Controller pipeline to switch to the given scene
 		public void SwitchScene(string sceneName) {
 			if (!IsActiveScene(sceneName)) {
 				StartCoroutine(FadeAndSwitchScenes(sceneName));
+			} else {
+				Debug.LogError(sceneName + " is already active!");
 			}
 		}
 		
@@ -25,13 +44,7 @@ namespace MermaidCatch {
 
 			yield return LoadUI();
 
-			
-			yield return StartCoroutine(Fader.FadeOut());
-
-			yield return StartCoroutine(LoadSceneAndSetActive(config.FirstLevel));
-										
-			yield return StartCoroutine(Fader.FadeIn());
-			
+			yield return LoadMainMenu();
 		}
 
 		// Load all UI scenes
@@ -43,7 +56,7 @@ namespace MermaidCatch {
 		IEnumerator LoadSceneAndSetActive(string sceneName) {
             yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 
-            Scene newlyLoadedScene = SceneManager.GetSceneAt (SceneManager.sceneCount - 1);
+            Scene newlyLoadedScene = SceneManager.GetSceneByName(sceneName);
             SceneManager.SetActiveScene (newlyLoadedScene);
 
 		}
@@ -70,7 +83,7 @@ namespace MermaidCatch {
 				yield return SceneManager.UnloadSceneAsync(oldScene);
 				yield return StartCoroutine(LoadSceneAndSetActive(newScene));
             } else {
-                Debug.Log("Can't switch scenes.");
+                Debug.LogError("Can't switch scenes.");
             }
         }
 	
