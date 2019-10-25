@@ -4,12 +4,14 @@ namespace MermaidCatch {
 
 	public class GameManager : Singleton<GameManager> {
 
+		public bool IsMenu = true;
+		
 		void OnEnable() {
-			UIEvents.OnStartGame += UnPause;
+			UIEvents.OnStartGame += Reset;
 		}
 
 		void OnDisable() {
-			UIEvents.OnStartGame -= UnPause;
+			UIEvents.OnStartGame -= Reset;
 		}
 
 		void Update () {
@@ -18,6 +20,11 @@ namespace MermaidCatch {
 			if (PressedPause()) {
 				Time.timeScale = IsPaused() ? 1 : 0;
 			} 
+		}
+
+		void Reset() {
+			BallSpawner.Reset();
+			UnPause();
 		}
 		
 		public void UnPause() {

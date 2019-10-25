@@ -6,29 +6,27 @@ namespace MermaidCatch {
 		
 		public static int NumberOfBalls { get; set; }
 		public GameObject _ball;
+		public int MaxBalls = 3;
+
+		public float MaxDelay = 2f;
+		public float MinDelay = 0.5f;
 		
 		bool spawningBall = false;	
-		
-		const float MAX_BALLS = 3;
-		
+				
 		private static Ball[] balls;
-
-		void OnEnable() {
-			UIEvents.OnStartGame += Reset;
-		}
-
-		void OnDisable() {
-			UIEvents.OnStartGame -= Reset;
-		}
 		
 		void FixedUpdate () {
-			if (NumberOfBalls < MAX_BALLS && !spawningBall) {
+			if (NumberOfBalls < MaxBalls && !spawningBall && !GameManager.Instance.IsMenu) {
 				StartCoroutine(SpawnBallWithDelay());
+				Debug.Log("Number of balls on screen: " + NumberOfBalls);
 			}
 		}
 		
 		// Destroy all balls in the game
 		public static void Reset() {
+
+			Debug.Log("Resetting the game.");
+			
 			balls = GameObject.FindObjectsOfType<Ball>();
 			
 			// Destroy all balls
@@ -38,12 +36,14 @@ namespace MermaidCatch {
 			
 			// Reset the number of balls
 			NumberOfBalls = 0;
+
+			GameManager.Instance.IsMenu = false;
 		}
 		
 		IEnumerator SpawnBallWithDelay() {
 			spawningBall = true;
 			
-			float delay = Random.Range(0.5f, 2f);
+			float delay = Random.Range(MinDelay, MaxDelay);
 			yield return new WaitForSeconds (delay);
 			
 			SpawnBall();

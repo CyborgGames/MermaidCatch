@@ -48,7 +48,7 @@ namespace MermaidCatch {
 		public int ScorePlayer(string playerName, int score, Text scoreLabel) {
 			score++;
 			scoreLabel.text = score.ToString();
-			if (score >= SCORE_NEEDED_TO_WIN) {
+			if (score == SCORE_NEEDED_TO_WIN) {
 				PlayerWins(playerName);
 			}
 			return score;
@@ -65,8 +65,9 @@ namespace MermaidCatch {
 		void PlayerWins(string playerName) {
 			GameOverText.gameObject.SetActive(true);
 			GameOverText.text = string.Format("{0} wins!", playerName);
-			// GameManager.Instance.Pause();
-
+			
+			GameManager.Instance.IsMenu = true;
+			
 			Debug.Log("Switching scene to Title");
 			SceneController.Instance.SwitchScene("Title");
 
