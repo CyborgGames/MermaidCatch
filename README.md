@@ -10,3 +10,4 @@ Requires Unity 2019.3.
 
 * Underwater background art by [ansimuz.com](http://ansimuz.com).
 * Spear by Jordan Irwin.
+* UI from [OpenGameArt](http://opengameart.org)

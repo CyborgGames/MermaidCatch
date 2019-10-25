@@ -16,9 +16,13 @@ namespace MermaidCatch {
 			
 			SceneController.Instance.SwitchScene("MultiPlayer");
 			UIEvents.StartGame();			
+		} 
+		
+		void Update() {
+			if (Input.GetKeyDown(KeyCode.Space)) {
+				StartSinglePlayer();
+			}
 		}
-		
-		
 	}
 
 }

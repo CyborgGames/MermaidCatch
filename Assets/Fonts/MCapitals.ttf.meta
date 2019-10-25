@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 454c140df672442cdb23a2379af7942b
-timeCreated: 1503855172
-licenseType: Free
+guid: e1c74fecd9949d721a6dd2f743887cdf
 TrueTypeFontImporter:
+  externalObjects: {}
   serializedVersion: 4
   fontSize: 16
-  forceTextureCase: 0
+  forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Vollkorn
+  fontName: MCapitals
   fontNames:
-  - Vollkorn
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 249ed234cd46d4dc98bcfd19b4458c22, type: 3}
+  - MCapitals
+  fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 3
+  fontRenderingMode: 0
   ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
