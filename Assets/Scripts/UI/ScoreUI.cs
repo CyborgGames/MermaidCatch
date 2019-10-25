@@ -6,7 +6,6 @@ namespace MermaidCatch {
 	
 	public class ScoreUI : Singleton<ScoreUI> {
 		
-		public Text GameOverText;
 		public ScoreTracker blue, red;
 		
 		static int blueScore, redScore;
@@ -41,9 +40,6 @@ namespace MermaidCatch {
 			blue.Reset();
 			red.Reset();
 			
-			GameOverText.text = "";
-			GameOverText.gameObject.SetActive(false);
-			
 		}
 		
 		public void ScoreRed() {
@@ -56,8 +52,7 @@ namespace MermaidCatch {
 		
 		public int ScorePlayer(string playerName, int score, ScoreTracker tracker) {
 			score++;
-
-			// TODO: Update lives
+	   
 			tracker.Decrease();
 			
 			if (score == SCORE_NEEDED_TO_WIN) {
@@ -65,25 +60,15 @@ namespace MermaidCatch {
 			}
 			return score;
 		}
-    
-		public void BlueWins() {
-			PlayerWins("Blue Player");
-		}
 		
-		public void RedWins() {
-			PlayerWins("Red Player");
-		}
-		
-		void PlayerWins(string playerName) {
-			GameOverText.gameObject.SetActive(true);
-			GameOverText.text = string.Format("{0} wins!", playerName);
-			
-			GameManager.Instance.IsMenu = true;
-			
-			Debug.Log("Switching scene to Title");
-			SceneController.Instance.SwitchScene("Title");
+		void PlayerWins(string playerName) {			
+			if (playerName == "red") {
+				GameManager.Lose();
+			} else {
+				GameManager.Win();
+			}
 
-			Hide();
+
 			
 		}
 	}

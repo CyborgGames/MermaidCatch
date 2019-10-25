@@ -10,7 +10,7 @@ namespace MermaidCatch {
 		const float MIN = -4f;
 		
 		void OnTriggerEnter2D (Collider2D other) {
-			if (other.GetComponent<Ball>() != null) {
+			if (other.GetComponent<Ball>() != null && !GameManager.Instance.IsMenu) {
 				
 				ScorePoint(other.transform);
 				

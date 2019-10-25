@@ -73,7 +73,11 @@ namespace MermaidCatch {
 
             yield return SwitchToScene(sceneName);
 
-			ScoreUI.Instance.Show();
+			if (!GameManager.Instance.IsMenu) {
+				ScoreUI.Instance.Show();
+			} else {
+				ScoreUI.Instance.Hide();
+			}
 			
             // Fade from black
             yield return StartCoroutine(Fader.FadeIn());
