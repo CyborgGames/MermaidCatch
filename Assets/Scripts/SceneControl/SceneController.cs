@@ -22,6 +22,8 @@ namespace MermaidCatch {
 			
 			yield return StartCoroutine(Fader.FadeOut());
 
+			ScoreUI.Instance.Hide();
+
 			Debug.Log("Loading Title");
 			yield return StartCoroutine(LoadSceneAndSetActive(config.Title));
 
@@ -30,6 +32,7 @@ namespace MermaidCatch {
 			yield return StartCoroutine(Fader.FadeIn());
 		
 		}
+		
 		// Use the Scene Controller pipeline to switch to the given scene
 		public void SwitchScene(string sceneName) {
 			if (!IsActiveScene(sceneName)) {
@@ -62,15 +65,19 @@ namespace MermaidCatch {
 		}
 		
 		IEnumerator FadeAndSwitchScenes(string sceneName) {
+
+			ScoreUI.Instance.Hide();
 			
             // Fade to black
             yield return StartCoroutine(Fader.FadeOut());
 
             yield return SwitchToScene(sceneName);
 
+			ScoreUI.Instance.Show();
+			
             // Fade from black
             yield return StartCoroutine(Fader.FadeIn());
-
+			
 		}
 		
 		IEnumerator SwitchToScene(string sceneName) {

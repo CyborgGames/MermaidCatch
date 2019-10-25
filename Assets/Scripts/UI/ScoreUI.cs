@@ -2,16 +2,16 @@
 using UnityEngine.UI;
 
 namespace MermaidCatch {
+
 	
 	public class ScoreUI : Singleton<ScoreUI> {
 		
-		public Text BlueScore;
-		public Text RedScore;
 		public Text GameOverText;
+		public ScoreTracker blue, red;
 		
 		static int blueScore, redScore;
 		
-		const int SCORE_NEEDED_TO_WIN = 5;
+		const int SCORE_NEEDED_TO_WIN = 3;
 
 		void OnEnable() {
 			UIEvents.OnStartGame += ResetScore;
@@ -24,13 +24,22 @@ namespace MermaidCatch {
 			UIEvents.OnScoreRed -= ScoreRed;
 			UIEvents.OnScoreBlue -= ScoreBlue;
 		}
+
+		public void Show() {
+			GetComponent<Canvas>().enabled = true;
+		}
+
+		public void Hide() {
+			GetComponent<Canvas>().enabled = false;
+		}
 		
 		public void ResetScore() {
 			blueScore = 0;
 			redScore = 0;
-			
-			BlueScore.text = blueScore.ToString();
-			RedScore.text = redScore.ToString();
+
+			// TODO: Update lives
+			blue.Reset();
+			red.Reset();
 			
 			GameOverText.text = "";
 			GameOverText.gameObject.SetActive(false);
@@ -38,16 +47,19 @@ namespace MermaidCatch {
 		}
 		
 		public void ScoreRed() {
-			redScore = ScorePlayer("Red Player", redScore, RedScore);
+			redScore = ScorePlayer("Red Player", redScore, blue);
 		}
 		
 		public void ScoreBlue() {
-			blueScore = ScorePlayer("Blue Player", blueScore, BlueScore);
+			blueScore = ScorePlayer("Blue Player", blueScore, red);
 		}
 		
-		public int ScorePlayer(string playerName, int score, Text scoreLabel) {
+		public int ScorePlayer(string playerName, int score, ScoreTracker tracker) {
 			score++;
-			scoreLabel.text = score.ToString();
+
+			// TODO: Update lives
+			tracker.Decrease();
+			
 			if (score == SCORE_NEEDED_TO_WIN) {
 				PlayerWins(playerName);
 			}
@@ -71,6 +83,7 @@ namespace MermaidCatch {
 			Debug.Log("Switching scene to Title");
 			SceneController.Instance.SwitchScene("Title");
 
+			Hide();
 			
 		}
 	}
