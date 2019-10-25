@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+using Cyborg.Scenes;
+
 namespace MermaidCatch {
 
 	public class GameManager : Singleton<GameManager> {
@@ -56,8 +58,7 @@ namespace MermaidCatch {
 			IsMenu = true;
 			yield return new WaitForSeconds(0.25f);
 
-			Debug.Log("Switching scene to Title");
-			SceneController.Instance.SwitchScene("Title");
+			SceneEvents.ChangeScene("Title");
 
 			yield return new WaitForSeconds(1.5f);
 			AudioController.Restart();

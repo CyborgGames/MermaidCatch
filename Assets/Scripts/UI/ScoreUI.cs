@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+using Cyborg.Scenes;
+
 namespace MermaidCatch {
 
 	
@@ -16,16 +18,27 @@ namespace MermaidCatch {
 			UIEvents.OnStartGame += ResetScore;
 			UIEvents.OnScoreRed += ScoreRed;
 			UIEvents.OnScoreBlue += ScoreBlue;
+
+			SceneController.AfterSceneUnload += Hide;
+			SceneController.BeforeSceneLoad += Show;
 		}
 
 		void OnDisable() {
 			UIEvents.OnStartGame -= ResetScore;
 			UIEvents.OnScoreRed -= ScoreRed;
 			UIEvents.OnScoreBlue -= ScoreBlue;
+
+			SceneController.AfterSceneUnload -= Hide;
+			SceneController.BeforeSceneLoad -= Show;
 		}
 
 		public void Show() {
-			GetComponent<Canvas>().enabled = true;
+			if (GameManager.Instance.IsMenu) {
+				// Do nothing; this is the main menu;
+				Hide();
+			} else {
+				GetComponent<Canvas>().enabled = true;
+			}
 		}
 
 		public void Hide() {

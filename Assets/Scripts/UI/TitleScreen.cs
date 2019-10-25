@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 
+using Cyborg.Scenes;
+
 namespace MermaidCatch {
 
 	public class TitleScreen : Singleton<TitleScreen> {
 		
 		public void StartSinglePlayer() {
 			AudioController.PlayClick();
-			SceneController.Instance.SwitchScene("SinglePlayer");
+			SceneEvents.ChangeScene("SinglePlayer");
 			UIEvents.StartGame();
 
 		}
@@ -14,7 +16,7 @@ namespace MermaidCatch {
 		public void StartMultiPlayer() {
 			AudioController.PlayClick();
 			
-			SceneController.Instance.SwitchScene("MultiPlayer");
+			SceneEvents.ChangeScene("MultiPlayer");
 			UIEvents.StartGame();			
 		} 
 		

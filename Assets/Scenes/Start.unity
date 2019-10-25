@@ -426,10 +426,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1378720302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 758f75c509829ae2bbd394956db513f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 92c2c512bf3f726938447c9da04d55d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _persist: 0
+  isFading: 0
+  duration: 1
 --- !u!225 &1378720304
 CanvasGroup:
   m_ObjectHideFlags: 0

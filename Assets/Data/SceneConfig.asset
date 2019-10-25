@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8668f8136172b0ad930cfd9e96d4cf7, type: 3}
-  m_Name: Config
+  m_Script: {fileID: 11500000, guid: 9e1e8fe30e0139a1799674dbf722b675, type: 3}
+  m_Name: SceneConfig
   m_EditorClassIdentifier: 
-  FirstLevel: SinglePlayer
   Title: Title
-  Score: Score
+  GameOver: _GameOver
+  UserInterface:
+  - Score
