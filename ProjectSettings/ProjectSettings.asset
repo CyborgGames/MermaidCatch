@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Cidney Hamilton
+  companyName: Cyborg Games
   productName: Mermaid Catch
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -110,6 +110,7 @@ PlayerSettings:
   switchNVNShaderPoolsGranularity: 33554432
   switchNVNDefaultPoolsGranularity: 16777216
   switchNVNOtherPoolsGranularity: 16777216
+  vulkanNumSwapchainBuffers: 2
   vulkanEnableSetSRGBWrite: 0
   m_SupportedAspectRatios:
     4:3: 1
@@ -280,7 +281,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: b44f6332ca52a460e97a863b86926fa4, type: 3}
+      m_Icon: {fileID: 2800000, guid: 795a9b2f060b34d02864b555c03a37b1, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -543,6 +544,7 @@ PlayerSettings:
   ps4contentSearchFeaturesUsed: 0
   ps4attribEyeToEyeDistanceSettingVR: 0
   ps4IncludedModules: []
+  ps4attribVROutputEnabled: 0
   monoEnv: 
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
