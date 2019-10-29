@@ -66,7 +66,7 @@ namespace MermaidCatch {
 		
 		public int ScorePlayer(string playerName, int score, ScoreTracker tracker) {
 			// SFX
-			AudioController.PlayGoal();
+			AudioController.PlayClick();
 			
 			score++;
 	   
