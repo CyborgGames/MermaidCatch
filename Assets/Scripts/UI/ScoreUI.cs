@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+using Cyborg.Audio;
 using Cyborg.Scenes;
 
 namespace MermaidCatch {
@@ -64,6 +65,9 @@ namespace MermaidCatch {
 		}
 		
 		public int ScorePlayer(string playerName, int score, ScoreTracker tracker) {
+			// SFX
+			AudioController.PlayGoal();
+			
 			score++;
 	   
 			tracker.Decrease();

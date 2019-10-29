@@ -61,6 +61,7 @@ namespace MermaidCatch {
 			SceneEvents.ChangeScene("Title");
 
 			yield return new WaitForSeconds(1.5f);
+			
 			AudioController.Restart();
 		}
 

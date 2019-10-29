@@ -1,27 +1,31 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine.UI;
-
 public class ScoreTracker : MonoBehaviour
 {
-	public Image[] hearts;
+	// An array of hearts, representing the player's life
+	Heart[] hearts;
 
-	int index = 0;
+	// Indext to keep track of the next heart to lose if the player takes damage
+	int i;
+
+	void Start() {
+		hearts = gameObject.GetComponentsInChildren<Heart>();
+		Reset();
+	}
 	
 	public void Reset() {
-		foreach(Image heart in hearts) {
-			heart.enabled = true;
-		}
-		
-		index = 0;
+		Array.ForEach(hearts, heart => heart.Gain());		
+		i = hearts.Length;
 	}
 
 	public void Decrease() {
-		if (index < hearts.Length) {
-			index++;
-			hearts[hearts.Length - index].enabled = false;
+		if (i > 0) {
+			i--;
+			
+			hearts[i].Lose();
 		}
 	}
 	

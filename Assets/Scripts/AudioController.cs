@@ -36,6 +36,10 @@ namespace MermaidCatch {
 		public static void PlayClick() {
 			AudioEvents.PlaySound("misc_menu");
 		}
+
+		public static void PlayGoal() {
+			AudioEvents.PlaySound("goal");
+		}
 	}
 	
 }
