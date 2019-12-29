@@ -1,64 +1,76 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections;
+using UnityEngine;
 
 namespace MermaidCatch {
+
+	// Spawn point that spawns balls
 	public class BallSpawner : MonoBehaviour {
-		
+
+		// Number of balls currently in play
 		public static int NumberOfBalls { get; set; }
-		public GameObject _ball;
+		
+		// Max number of balls that can be in play
 		public int MaxBalls = 3;
+	   
+		// Ball prefab to spawn
+		public GameObject ballPrefab;
 
 		public float MaxDelay = 2f;
 		public float MinDelay = 0.5f;
 		
-		bool spawningBall = false;	
-				
-		private static Ball[] balls;
+		bool spawningBall = false;				   
+
+		void OnEnable() {
+			UIEvents.OnStartGame += Reset;
+		}
+
+		void OnDisable() {
+			UIEvents.OnStartGame -= Reset;
+		}
 		
 		void FixedUpdate () {
-			if (NumberOfBalls < MaxBalls && !spawningBall && !GameManager.Instance.IsMenu) {
+			CheckForSpawnBall();
+		}
+
+		void CheckForSpawnBall() {
+			if (GameManager.IsMenu) {
+				// Don't spawn on the menu scene
+			} else if (spawningBall) {
+				// In the middle of spawning a ball; don't spawn anything new
+			} else if (NumberOfBalls < MaxBalls) {
+				// Go ahead and spawn
 				StartCoroutine(SpawnBallWithDelay());
-				Debug.Log("Number of balls on screen: " + NumberOfBalls);
 			}
 		}
 		
 		// Destroy all balls in the game
-		public static void Reset() {
+		void Reset() {
 
-			Debug.Log("Resetting the game.");
-			
-			balls = GameObject.FindObjectsOfType<Ball>();
-			
-			// Destroy all balls
-			foreach (Ball ball in balls) {
-				Destroy(ball.gameObject);
-			}
-			
-			// Reset the number of balls
+			Ball[] balls = GameObject.FindObjectsOfType<Ball>();
+			Array.ForEach(balls, ball => Destroy(ball.gameObject));
 			NumberOfBalls = 0;
-
-			GameManager.Instance.IsMenu = false;
 		}
 		
 		IEnumerator SpawnBallWithDelay() {
 			spawningBall = true;
+
+			yield return new WaitForSeconds (UnityEngine.Random.Range(MinDelay, MaxDelay));
 			
-			float delay = Random.Range(MinDelay, MaxDelay);
-			yield return new WaitForSeconds (delay);
-			
-			SpawnBall();
-			
+			SpawnBall();		   
 			spawningBall = false;
 		}
 		
 		void SpawnBall() {
 			NumberOfBalls++;
 			
-			GameObject ballClone = Instantiate(_ball, 
+			GameObject ballClone = Instantiate(ballPrefab, 
 											   transform.position, 
 											   transform.rotation);
 			
 			ballClone.transform.SetParent(transform);
+
+			// After spawning, give the ball a push
 			ballClone.GetComponent<Ball>().Push();
 		}
 		

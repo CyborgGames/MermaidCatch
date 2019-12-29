@@ -33,7 +33,7 @@ namespace MermaidCatch {
 		}
 
 		public void Show() {
-			if (GameManager.Instance.IsMenu) {
+			if (GameManager.IsMenu) {
 				// Do nothing; this is the main menu;
 				Hide();
 			} else {

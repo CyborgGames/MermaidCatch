@@ -7,7 +7,7 @@ namespace MermaidCatch {
 
 	public class GameManager : Singleton<GameManager> {
 		
-		public bool IsMenu = true;
+		public static bool IsMenu = true;
 		
 		void OnEnable() {
 			UIEvents.OnStartGame += Reset;
@@ -23,11 +23,6 @@ namespace MermaidCatch {
 			if (PressedPause()) {
 				Time.timeScale = IsPaused() ? 1 : 0;
 			} 
-		}
-
-		void Reset() {
-			BallSpawner.Reset();
-			UnPause();
 		}
 
 		public static void Win() {
@@ -48,6 +43,11 @@ namespace MermaidCatch {
 			Time.timeScale = 0;
 		}
 
+		void Reset() {
+			IsMenu = false;
+			UnPause();
+		}
+		
 		void GameOver() {
 			StartCoroutine(ToMainMenu());
 		}
@@ -67,11 +67,11 @@ namespace MermaidCatch {
 
 		
 		// Returns true if the player pressed the Pause button or key
-		private bool PressedPause() {
+		bool PressedPause() {
 			return Input.GetKeyDown(KeyCode.P);
 		}
 		
-		private bool IsPaused() {
+		bool IsPaused() {
 			return Time.timeScale == 0;
 		}
 		
