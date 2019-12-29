@@ -6,18 +6,13 @@ using Cyborg.Scenes;
 
 namespace MermaidCatch {
 	
-	public class ScoreUI : Singleton<ScoreUI> {
+	public class ScoreUI : MonoBehaviour {
 		
 		public ScoreTracker blue, red;
-		
-		static int blueScore, redScore;
-		
-		const int SCORE_NEEDED_TO_WIN = 3;
 
 		void OnEnable() {
 			UIEvents.OnStartGame += ResetScore;
-			UIEvents.OnScoreRed += ScoreRed;
-			UIEvents.OnScoreBlue += ScoreBlue;
+			UIEvents.OnScore += Score;
 
 			SceneController.AfterSceneUnload += Hide;
 			SceneController.BeforeSceneLoad += Show;
@@ -25,8 +20,7 @@ namespace MermaidCatch {
 
 		void OnDisable() {
 			UIEvents.OnStartGame -= ResetScore;
-			UIEvents.OnScoreRed -= ScoreRed;
-			UIEvents.OnScoreBlue -= ScoreBlue;
+			UIEvents.OnScore -= Score;
 
 			SceneController.AfterSceneUnload -= Hide;
 			SceneController.BeforeSceneLoad -= Show;
@@ -45,45 +39,22 @@ namespace MermaidCatch {
 			GetComponent<Canvas>().enabled = false;
 		}
 		
-		public void ResetScore() {
-			blueScore = 0;
-			redScore = 0;
-
+		public void ResetScore() {			
 			// Update the UI
 			blue.Reset();
-			red.Reset();
-			
+			red.Reset();			
 		}
 		
-		public void ScoreRed() {
-			redScore = ScorePlayer("Red Player", redScore, blue);
-		}
-		
-		public void ScoreBlue() {
-			blueScore = ScorePlayer("Blue Player", blueScore, red);
-		}
-		
-		public int ScorePlayer(string playerName, int score, ScoreTracker tracker) {
-			// SFX
-			AudioController.PlayClick();
-			
-			score++;
-	   
-			tracker.Decrease();
-			
-			if (score == SCORE_NEEDED_TO_WIN) {
-				PlayerWins(playerName);
-			}
-			return score;
-		}
-		
-		void PlayerWins(string playerName) {			
-			if (playerName == "red") {
-				GameManager.Lose();
+		void Score(PlayerEnum player) {
+			if (player == PlayerEnum.Red) {
+				// Blue loses a life when red scores
+				blue.Decrease();
 			} else {
-				GameManager.Win();
+				// Red loses a life when Blue scores
+				red.Decrease();
 			}			
-		}
+		}		
+
 	}
 	
 }

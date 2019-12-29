@@ -12,9 +12,8 @@ namespace MermaidCatch {
 
 		public static event Action OnStartGame;
 
-		// TODO: Make Generic
-		public static event Action OnScoreBlue;
-		public static event Action OnScoreRed;
+		public delegate void PlayerEvent(PlayerEnum player);
+		public static event PlayerEvent OnScore;
 		
 		// Start a new game
 		public static void StartGame() {
@@ -24,16 +23,16 @@ namespace MermaidCatch {
 		}
 
 		// Score one point to Blue
-		public static void ScoreBlue() {
-			if (OnScoreBlue != null) {
-				OnScoreBlue();
+		public static void ScoreBlue() {		  
+			if (OnScore != null) {
+				OnScore(PlayerEnum.Blue);
 			}
 		}
 
 		// Score one point to Red
 		public static void ScoreRed() {
-			if (OnScoreRed != null) {
-				OnScoreRed();
+			if (OnScore != null) {
+				OnScore(PlayerEnum.Red);
 			}
 		}
 	}
