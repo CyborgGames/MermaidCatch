@@ -5,7 +5,7 @@ using UnityEngine;
 namespace MermaidCatch {
 
 	// Spawn point that spawns balls
-	public class BallSpawner : MonoBehaviour {
+	public class BallSpawner : SpawnPoint {
 
 		// Number of balls currently in play
 		public static int NumberOfBalls { get; set; }
@@ -14,12 +14,7 @@ namespace MermaidCatch {
 		public int MaxBalls = 3;
 	   
 		// Ball prefab to spawn
-		public GameObject ballPrefab;
-
-		public float MaxDelay = 2f;
-		public float MinDelay = 0.5f;
-		
-		bool spawningBall = false;				   
+		public Ball ballPrefab;	  
 
 		void OnEnable() {
 			UIEvents.OnStartGame += Reset;
@@ -36,7 +31,7 @@ namespace MermaidCatch {
 		void CheckForSpawnBall() {
 			if (GameManager.IsMenu) {
 				// Don't spawn on the menu scene
-			} else if (spawningBall) {
+			} else if (isSpawning) {
 				// In the middle of spawning a ball; don't spawn anything new
 			} else if (NumberOfBalls < MaxBalls) {
 				// Go ahead and spawn
@@ -53,25 +48,19 @@ namespace MermaidCatch {
 		}
 		
 		IEnumerator SpawnBallWithDelay() {
-			spawningBall = true;
+			isSpawning = true;
 
-			yield return new WaitForSeconds (UnityEngine.Random.Range(MinDelay, MaxDelay));
+			yield return new WaitForSeconds (Delay);
 			
-			SpawnBall();		   
-			spawningBall = false;
+			SpawnBall();
+			
+			isSpawning = false;
 		}
 		
 		void SpawnBall() {
 			NumberOfBalls++;
 			
-			GameObject ballClone = Instantiate(ballPrefab, 
-											   transform.position, 
-											   transform.rotation);
-			
-			ballClone.transform.SetParent(transform);
-
-			// After spawning, give the ball a push
-			ballClone.GetComponent<Ball>().Push();
+			Instantiate(ballPrefab, GetSpawnPosition(), GetSpawnRotation(), transform);
 		}
 		
 	}

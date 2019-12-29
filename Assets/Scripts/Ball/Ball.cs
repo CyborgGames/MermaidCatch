@@ -28,6 +28,12 @@ namespace MermaidCatch {
 		void Awake() {
 			rigidBody = GetComponent<Rigidbody2D>();
 		}
+
+		void Start() {
+
+			// Immediately after initialization, push this ball
+			Push();
+		}
 		
 		// Handle collisions
 		void OnCollisionEnter2D(Collision2D other)
