@@ -10,7 +10,6 @@ namespace MermaidCatch {
 		void OnCollisionEnter2D(Collision2D other) {
 			if (other.gameObject.tag == "Ball") {
 				AudioController.PlayPlop();
-
 			}
 		}
 	}

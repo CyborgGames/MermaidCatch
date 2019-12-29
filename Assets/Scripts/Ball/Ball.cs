@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 namespace MermaidCatch {
+
 	public class Ball : MonoBehaviour {
 		
 		[SerializeField]

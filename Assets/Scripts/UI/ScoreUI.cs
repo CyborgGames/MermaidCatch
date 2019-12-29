@@ -5,7 +5,6 @@ using Cyborg.Audio;
 using Cyborg.Scenes;
 
 namespace MermaidCatch {
-
 	
 	public class ScoreUI : Singleton<ScoreUI> {
 		
@@ -50,7 +49,7 @@ namespace MermaidCatch {
 			blueScore = 0;
 			redScore = 0;
 
-			// TODO: Update lives
+			// Update the UI
 			blue.Reset();
 			red.Reset();
 			
@@ -83,10 +82,7 @@ namespace MermaidCatch {
 				GameManager.Lose();
 			} else {
 				GameManager.Win();
-			}
-
-
-			
+			}			
 		}
 	}
 	

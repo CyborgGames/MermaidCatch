@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 namespace MermaidCatch {
+
 	// Behavior for the enemy player
 	public class Enemy : Paddle {
 

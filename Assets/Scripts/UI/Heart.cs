@@ -3,35 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Heart : MonoBehaviour
-{
+namespace MermaidCatch {
 
-	Image img;
-	
-	bool isAnimating = false;
+	// A heart representing one of the player's lives
+	public class Heart : MonoBehaviour
+	{
+		// The image representing the heart
+		Image img;
 
-	float duration = 1.5f;
-	
-	public void Gain() {
-		img.color = Color.white;
-		isAnimating = false;
-	}
+		// True if the heart is fading out; false otherwise
+		bool isAnimating = false;
 
-	public void Lose() {
-		isAnimating = true;
-	}
+		// Duration of the fadeout
+		float duration = 1.5f;
 
-	void Awake() {
-		img = GetComponent<Image>();
-	}
-	
-	void Update() {
-		if (isAnimating) {
+		// Gain this heart
+		public void Gain() {
+			img.color = Color.white;
+			isAnimating = false;
+		}
+
+		// Lose this heart
+		public void Lose() {
+			// Trigger a fadeout
+			isAnimating = true;
+		}
+		
+		void Awake() {
+			img = GetComponent<Image>();
+		}
+		
+		void Update() {
+			if (isAnimating) {
+				FadeOut();
+			}	   		
+		}
+
+		void FadeOut() {
 			img.color = Color.Lerp(img.color, Color.clear, Time.deltaTime * duration);
 			if (img.color == Color.clear) {
 				isAnimating = false;
 			}	
-		}	   		
+		}
+		
 	}
-
 }
