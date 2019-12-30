@@ -363,6 +363,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5900288973106056627, guid: 0fe9b65ac8b3dc50aaf92b8fd66d173c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66ab1fe18226c939f9cea1ca02825fbd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fe9b65ac8b3dc50aaf92b8fd66d173c, type: 3}
 --- !u!224 &485752539 stripped
@@ -938,6 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f98f9f74c632b25ab8dcf40c57238a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Max: 3
 --- !u!4 &2009096658
 Transform:
   m_ObjectHideFlags: 0
@@ -1129,5 +1136,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5900288973106056627, guid: 0fe9b65ac8b3dc50aaf92b8fd66d173c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66ab1fe18226c939f9cea1ca02825fbd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fe9b65ac8b3dc50aaf92b8fd66d173c, type: 3}

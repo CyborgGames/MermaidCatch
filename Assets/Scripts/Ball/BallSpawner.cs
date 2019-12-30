@@ -33,7 +33,7 @@ namespace MermaidCatch {
 		}
 
 		void CheckForSpawnBall() {
-			Debug.Log("BallSpawner.NumberOfBalls = " + NumberOfBalls);
+			// Debug.Log("BallSpawner.NumberOfBalls = " + NumberOfBalls);
 			if (GameManager.IsMenu) {
 				// Don't spawn on the menu scene
 			} else if (isSpawning) {
