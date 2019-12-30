@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e1c74fecd9949d721a6dd2f743887cdf
+guid: d47812935351a076cb83cdc1da255da1
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: MCapitals
+  fontName: VCR OSD Mono
   fontNames:
-  - MCapitals
+  - VCR OSD Mono
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

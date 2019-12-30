@@ -324,7 +324,6 @@ PlayerSettings:
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
-  vuforiaEnabled: 0
   m_TemplateCustomTags: {}
   mobileMTRendering:
     iPhone: 1
@@ -641,7 +640,9 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 1
+    UNet: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -654,9 +655,9 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 0ec62759-6bf2-44f4-b232-c5dd45604391
+  cloudProjectId: 18644bd0-2a98-4171-a2e9-3d8a43a7f90c
   framebufferDepthMemorylessMode: 0
-  projectName: Pong
+  projectName: Mermaid Pong
   organizationId: cidney-hamilton
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
