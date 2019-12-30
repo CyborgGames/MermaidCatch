@@ -6,6 +6,7 @@ namespace MermaidCatch {
 	public class EnemyMovement : MonoBehaviour {
 
 		public float speed;
+		public Animator animator;
 		
 		void Update () {
 			ChaseNearestBall();
@@ -15,9 +16,11 @@ namespace MermaidCatch {
 		void ChaseNearestBall() {
 			Ball ball = GetNearestBall();
 			if (ball == null) {
+				UpdateAnimator(0.0f);
 				return;
 			} else if (IsBallMovingTowardsMe(ball)) {
 				ChaseBall(ball);
+				UpdateAnimator(4.0f);
 			}
 		}
 		
@@ -25,7 +28,9 @@ namespace MermaidCatch {
 		void ChaseBall(Ball ball) {
 			
 			Transform ballTransform = ball.gameObject.transform;
-			
+
+			Debug.Log("Enemy position: " + transform.position.y);
+			Debug.Log("Enemy nearest ball position: " + ball.gameObject.transform.position.y);
 			// Check y direction of ball
 			if (IsHigherThan(ballTransform)) {
 				
@@ -65,11 +70,18 @@ namespace MermaidCatch {
 		}
 		
 		bool IsHigherThan(Transform other) {
-			return transform.position.y - other.position.y > 0.5f;
+			return transform.position.y - other.position.y > 0.0f;
 		}
 		
 		bool IsLowerThan(Transform other) {
-			return other.position.y - transform.position.y > 0.5f;
+			return other.position.y - transform.position.y > 0.0f;
+		}
+	   
+		void UpdateAnimator(float speed) {
+			if (animator != null) {
+				// Debug.Log("Setting animator speed to " + Mathf.Abs(speed));
+				animator.SetFloat("Speed", speed);
+			}						
 		}
 		
 	}

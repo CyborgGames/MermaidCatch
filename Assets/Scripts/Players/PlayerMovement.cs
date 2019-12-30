@@ -48,7 +48,7 @@ namespace MermaidCatch {
 
 		void UpdateAnimator(float speed) {
 			if (animator != null) {
-				Debug.Log("Setting animator speed to " + Mathf.Abs(speed));
+				// Debug.Log("Setting animator speed to " + Mathf.Abs(speed));
 				animator.SetFloat("Speed", speed);
 			}
 		}

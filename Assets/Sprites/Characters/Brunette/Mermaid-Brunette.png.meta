@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: f90f730155f326a919a48e9d2344321f
+guid: 190673fcbc49580d8bca35f9396cc679
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5165055952827083001
-    second: Mermaid_0
+      213: -8846244516513589723
+    second: Mermaid-Brunette_0
   - first:
-      213: 4211912079182695398
-    second: Mermaid_1
+      213: 4098254717844412718
+    second: Mermaid-Brunette_1
   - first:
-      213: 6820591222161195342
-    second: Mermaid_2
+      213: -5527515787071633542
+    second: Mermaid-Brunette_2
   - first:
-      213: 7131324651704402979
-    second: Mermaid_3
+      213: -4266443504164395638
+    second: Mermaid-Brunette_3
   - first:
-      213: -7958343793168000099
-    second: Mermaid_4
+      213: 3686170757981053432
+    second: Mermaid-Brunette_4
   - first:
-      213: 3666129761328525555
-    second: Mermaid_5
+      213: -8922535937075108011
+    second: Mermaid-Brunette_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -140,127 +140,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mermaid_0
+      name: Mermaid-Brunette_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 8
+        y: 64
+        width: 39
+        height: 60
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdc118704d7781f859b2712463137c72
+      internalID: -8846244516513589723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mermaid-Brunette_1
+      rect:
+        serializedVersion: 2
+        x: 57
         y: 65
-        width: 37
-        height: 58
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 39
+        height: 60
+      alignment: 3
+      pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ad3b8f99dac63ad2b26da575dc51e98
-      internalID: -5165055952827083001
+      spriteID: 5f6bfa823e2c5446db605ff943ad5a18
+      internalID: 4098254717844412718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mermaid_1
+      name: Mermaid-Brunette_2
       rect:
         serializedVersion: 2
-        x: 55
-        y: 66
-        width: 36
-        height: 57
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 99
+        y: 64
+        width: 39
+        height: 60
+      alignment: 3
+      pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 666014f455d6d432cb52ded3021d96eb
-      internalID: 4211912079182695398
+      spriteID: becc8e4df4e50fe92856109ac6e7ad60
+      internalID: -5527515787071633542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mermaid_2
+      name: Mermaid-Brunette_3
       rect:
         serializedVersion: 2
-        x: 104
-        y: 66
-        width: 36
-        height: 57
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db28c59f60f7331b99c67a5ec1147b51
-      internalID: 6820591222161195342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mermaid_3
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 4
-        width: 36
-        height: 57
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7063e80825e2022590891cfba189035
-      internalID: 7131324651704402979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mermaid_4
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 4
-        width: 36
-        height: 57
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f33eaf04da564e57cae59c5476b82da5
-      internalID: -7958343793168000099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mermaid_5
-      rect:
-        serializedVersion: 2
-        x: 106
+        x: 6
         y: 2
-        width: 36
-        height: 57
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 39
+        height: 60
+      alignment: 3
+      pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91876adcd05a93b98b4ba049dac9d4a5
-      internalID: 3666129761328525555
+      spriteID: 57ff8e05ace2ae214ba30f8a346a3b62
+      internalID: -4266443504164395638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mermaid-Brunette_4
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 2
+        width: 39
+        height: 60
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1445e60bf9f1c50af5f921d44bbe63
+      internalID: 3686170757981053432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mermaid-Brunette_5
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 39
+        height: 60
+      alignment: 3
+      pivot: {x: 1, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c108c7afcf26e3a548454b2b387d699d
+      internalID: -8922535937075108011
       vertices: []
       indices: 
       edges: []
@@ -268,7 +268,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 063f7b7d7a0b88f72ad1d89122bffe2f
+    spriteID: 0a81556b1827583ada7ebf216479f091
     internalID: 0
     vertices: []
     indices: 
