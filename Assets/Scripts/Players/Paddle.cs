@@ -7,8 +7,6 @@ namespace MermaidCatch {
 		int direction;
 		float previousPositionY;
 		
-		[SerializeField]
-		protected float _speed = 0.2f;
 		float _bottomBound = -4.5f;
 		float _topBound = 4.5f;
 		

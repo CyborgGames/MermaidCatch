@@ -3,11 +3,12 @@
 namespace MermaidCatch {
 
 	// Behavior for the enemy player
-	public class Enemy : Paddle {
+	public class EnemyMovement : MonoBehaviour {
+
+		public float speed;
 		
 		void Update () {
 			ChaseNearestBall();
-			UpdateDirection();
 		}
 		
 		// If there's a ball in range, chase it
@@ -29,12 +30,12 @@ namespace MermaidCatch {
 			if (IsHigherThan(ballTransform)) {
 				
 				// Move ball down if lower than paddle
-				transform.Translate(Vector3.down * _speed * Time.deltaTime);
+				transform.Translate(Vector3.down * speed * Time.deltaTime);
 				
 			} else if (IsLowerThan(ballTransform)) {
 				
 				// Move ball up if higher than paddle
-				transform.Translate(Vector3.up * _speed * Time.deltaTime);
+				transform.Translate(Vector3.up * speed * Time.deltaTime);
 			}
 		}
 		
