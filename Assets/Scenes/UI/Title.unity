@@ -234,7 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196425f564e2e4e27bbbbe0996a61054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _persist: 0
 --- !u!1 &1107130619
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.09625312, g: 0.1751249, b: 0.1981132, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -521,11 +520,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1953044444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
 --- !u!114 &1953044447
 MonoBehaviour:
