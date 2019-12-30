@@ -13,30 +13,11 @@ namespace MermaidCatch {
 		void OnEnable() {
 			UIEvents.OnStartGame += ResetScore;
 			UIEvents.OnScore += Score;
-
-			SceneController.AfterSceneUnload += Hide;
-			SceneController.BeforeSceneLoad += Show;
 		}
 
 		void OnDisable() {
 			UIEvents.OnStartGame -= ResetScore;
 			UIEvents.OnScore -= Score;
-
-			SceneController.AfterSceneUnload -= Hide;
-			SceneController.BeforeSceneLoad -= Show;
-		}
-
-		public void Show() {
-			if (GameManager.IsMenu) {
-				// Do nothing; this is the main menu;
-				Hide();
-			} else {
-				GetComponent<Canvas>().enabled = true;
-			}
-		}
-
-		public void Hide() {
-			GetComponent<Canvas>().enabled = false;
 		}
 		
 		public void ResetScore() {			
