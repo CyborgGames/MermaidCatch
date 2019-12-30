@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace MermaidCatch {
-	
+
+	// Moves the player based on keyboard or touch input
 	public class PlayerMovement : MonoBehaviour
 	{
 		
