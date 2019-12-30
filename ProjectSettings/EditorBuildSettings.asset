@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: c66ef5e570bc6a5f9b6b85e371ed83d3
   - enabled: 1
+    path: Assets/Scenes/UI/Pause.unity
+    guid: ef5f2de33de09873d90e936e4509810f
+  - enabled: 1
     path: Assets/Scenes/UI/Score.unity
     guid: 495e1d83101a6cef689b029ba4a911b7
   - enabled: 1

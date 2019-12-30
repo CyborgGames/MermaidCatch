@@ -14,6 +14,8 @@ namespace MermaidCatch {
 
 		public delegate void PlayerEvent(PlayerEnum player);
 		public static event PlayerEvent OnScore;
+
+		public static event Action OnPause;
 		
 		// Start a new game
 		public static void StartGame() {
@@ -27,6 +29,14 @@ namespace MermaidCatch {
 				OnScore(player);
 			}	
 		}
+
+		// Toggle pause
+		public static void Pause() {
+			if (OnPause != null) {
+				OnPause();
+			}
+		}
+
 	}
 	
 }

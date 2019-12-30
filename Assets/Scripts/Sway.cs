@@ -19,7 +19,15 @@ namespace MermaidCatch {
 		}
 		
 		// Rotate back and forth;
-		void Update() {
+		void FixedUpdate() {
+			if (GameManager.IsMenu) {
+				// Do nothing
+			} else {
+				Animate();
+			}
+		}
+
+		void Animate() {
 			transform.Rotate(Vector3.forward * Range * Mathf.Sin(Time.timeSinceLevelLoad * Speed));
 		}
 		

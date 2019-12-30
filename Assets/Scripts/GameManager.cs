@@ -22,6 +22,7 @@ namespace MermaidCatch {
 			// Pauses or plays game when player hits p
 			if (PressedPause()) {
 				Time.timeScale = IsPaused() ? 1 : 0;
+				UIEvents.Pause();
 			} 
 		}
 
