@@ -22,18 +22,10 @@ namespace MermaidCatch {
 			}
 		}
 
-		// Score one point to Blue
-		public static void ScoreBlue() {		  
+		public static void Score(PlayerEnum player) {
 			if (OnScore != null) {
-				OnScore(PlayerEnum.Blue);
-			}
-		}
-
-		// Score one point to Red
-		public static void ScoreRed() {
-			if (OnScore != null) {
-				OnScore(PlayerEnum.Red);
-			}
+				OnScore(player);
+			}	
 		}
 	}
 	

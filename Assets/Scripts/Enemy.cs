@@ -48,18 +48,13 @@ namespace MermaidCatch {
 		}
 		
 		Ball GetNearestBall() {
-			balls = FindObjectsOfType<Ball>();
 			
-			// Stop if there are no balls
-			if (balls.Length == 0) {
-				return null;
-			}
-			
+			Ball targetBall = null;
+
 			float distance = 10000f;
 			float thisDistance;
-			Ball targetBall = null;
 			
-			foreach(Ball ball in balls) {
+			foreach(Ball ball in FindObjectsOfType<Ball>()) {
 				thisDistance = Vector2.Distance(transform.position, ball.transform.position);
 				if (thisDistance < distance) {
 					targetBall = ball;

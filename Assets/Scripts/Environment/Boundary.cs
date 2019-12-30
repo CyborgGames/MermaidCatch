@@ -26,9 +26,11 @@ namespace MermaidCatch {
 
 			// Score a point
 			if (ball.position.x > MAX) {
-				UIEvents.ScoreRed();
+				// If the ball's moving off the right side of the screen, score a point for red
+				UIEvents.Score(PlayerEnum.Red);
 			} else if (ball.position.x < MIN) {
-				UIEvents.ScoreBlue();
+				// If the ball's moving off the left side of the screen, score a point for blue
+				UIEvents.Score(PlayerEnum.Blue);
 			}	
 		}
 	

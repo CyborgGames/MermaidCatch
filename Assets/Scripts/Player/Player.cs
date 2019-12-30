@@ -4,7 +4,6 @@ namespace MermaidCatch {
 	
 	public class Player : MonoBehaviour {
 		
-		int direction;
 		float previousPositionY;
 
 		// The maximum and minimum position for the player
@@ -16,7 +15,7 @@ namespace MermaidCatch {
 		}
 		
 		void FixedUpdate() {
-			Move();
+			SetBoundaries();
 		}
 		
 		void LateUpdate() {
@@ -25,22 +24,7 @@ namespace MermaidCatch {
 		
 		void UpdatePreviousPosition() {
 			previousPositionY = transform.position.y;
-		}
-		
-		protected void Move() {		
-			UpdateDirection();
-			SetBoundaries();
-		}
-		
-		protected void UpdateDirection() {
-			if (previousPositionY > transform.position.y) {
-				direction = -1;
-			} else if (previousPositionY < transform.position.y) {
-				direction = 1;
-			} else {
-				direction = 0;
-			}
-		}
+		}		
 		
 		// Clamp the position so the player doesn't go over the edge of the screen
 		protected void SetBoundaries() {
