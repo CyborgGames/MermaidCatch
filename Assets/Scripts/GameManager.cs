@@ -28,11 +28,17 @@ namespace MermaidCatch {
 
 		public static void Win() {
 			AudioController.PlayWin();
+
+			SceneEvents.ChangeScene("_Win");
+			
 			Instance.GameOver();
 		}
 
 		public static void Lose() {
 			AudioController.PlayLose();
+
+			SceneEvents.ChangeScene("_Lose");
+			
 			Instance.GameOver();
 		}
 
@@ -53,11 +59,14 @@ namespace MermaidCatch {
 			StartCoroutine(ToMainMenu());
 		}
 
+
 		IEnumerator ToMainMenu() {
-			AudioController.Pause();
 
 			IsMenu = true;
-			yield return new WaitForSeconds(0.25f);
+
+			AudioController.Pause();
+						
+			yield return new WaitForSeconds(3.0f);			
 
 			SceneEvents.ChangeScene("Title");
 

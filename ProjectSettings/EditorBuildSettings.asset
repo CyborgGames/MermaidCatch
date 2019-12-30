@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SinglePlayer.unity
     guid: 418dde264beac4b238729dffc7cadacb
+  - enabled: 1
+    path: Assets/Scenes/UI/_Win.unity
+    guid: 2cd9a6277a16a621b8efdeaec3b6bc2d
+  - enabled: 1
+    path: Assets/Scenes/UI/_Lose.unity
+    guid: 3b2885f54d7fdf8c4a805f8b3002847e
   m_configObjects: {}
