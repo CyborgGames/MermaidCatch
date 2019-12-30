@@ -4,7 +4,7 @@ namespace MermaidCatch {
 	
 	public class Player : MonoBehaviour {
 		
-		float previousPositionY;
+		protected float previousPositionY;
 
 		// The maximum and minimum position for the player
 		const float BOTTOM_BOUND = -4.5f;
