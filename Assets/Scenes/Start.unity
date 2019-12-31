@@ -1093,6 +1093,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: '@SceneController'
       objectReference: {fileID: 0}
+    - target: {fileID: 4629732979794464280, guid: 46e33d5cb9fff8ebea67150f50b62c0c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4629732979794464286, guid: 46e33d5cb9fff8ebea67150f50b62c0c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1222,6 +1227,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: '@AudioController'
       objectReference: {fileID: 0}
+    - target: {fileID: 5190302921346336288, guid: 7d66f3f51ded8ab6cbe541449507b142,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190302920362038801, guid: 7d66f3f51ded8ab6cbe541449507b142,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567196502748234813, guid: 7d66f3f51ded8ab6cbe541449507b142,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d66f3f51ded8ab6cbe541449507b142, type: 3}
 --- !u!1001 &6382695685755243938
@@ -1235,6 +1255,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: '@GameController'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382695685275252107, guid: e3a4263ea412350ea81ae6edf30ddb9e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6382695685275252105, guid: e3a4263ea412350ea81ae6edf30ddb9e,
         type: 3}
