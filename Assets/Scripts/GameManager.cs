@@ -69,8 +69,8 @@ namespace MermaidCatch {
 		IEnumerator ToMainMenu() {
 
 			IsMenu = true;
-
-			AudioController.Pause();
+			
+			// AudioController.Pause();
 						
 			yield return new WaitForSeconds(3.0f);			
 
@@ -78,7 +78,7 @@ namespace MermaidCatch {
 
 			yield return new WaitForSeconds(1.5f);
 			
-			AudioController.Restart();
+			// AudioController.Restart();
 		}
 
 		
