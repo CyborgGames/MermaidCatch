@@ -23,7 +23,13 @@ namespace MermaidCatch {
 			if (PressedPause()) {
 				Time.timeScale = IsPaused() ? 1 : 0;
 				UIEvents.Pause();
-			} 
+			}
+
+			if (PressedQuit()) {
+				if (IsMenu || IsPaused()) {
+					Application.Quit();
+				}
+			}
 		}
 
 		public static void Win() {
@@ -78,7 +84,11 @@ namespace MermaidCatch {
 		
 		// Returns true if the player pressed the Pause button or key
 		bool PressedPause() {
-			return Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Pause);
+			return Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Pause);
+		}
+
+		bool PressedQuit() {
+			return Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Escape);
 		}
 		
 		bool IsPaused() {

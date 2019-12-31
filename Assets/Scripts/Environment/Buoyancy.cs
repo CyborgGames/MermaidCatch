@@ -22,11 +22,11 @@ namespace MermaidCatch {
 		
 		// If below the water level, float
 		void Float() {
-			GetComponent<Rigidbody>().AddForce(transform.up * force);
+			GetComponent<Rigidbody2D>().AddForce(transform.up * force);
 		}
 
 		void Sink() {
-			GetComponent<Rigidbody>().AddForce(transform.up * -force);
+			GetComponent<Rigidbody2D>().AddForce(transform.up * -force);
 		}
 		
 	}
