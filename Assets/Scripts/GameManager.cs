@@ -78,7 +78,7 @@ namespace MermaidCatch {
 		
 		// Returns true if the player pressed the Pause button or key
 		bool PressedPause() {
-			return Input.GetKeyDown(KeyCode.P);
+			return Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Pause);
 		}
 		
 		bool IsPaused() {

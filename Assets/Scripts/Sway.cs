@@ -21,7 +21,8 @@ namespace MermaidCatch {
 		// Rotate back and forth;
 		void FixedUpdate() {
 			if (GameManager.IsMenu) {
-				// Do nothing
+				// Reset to zero
+				transform.rotation = Quaternion.identity;
 			} else {
 				Animate();
 			}
