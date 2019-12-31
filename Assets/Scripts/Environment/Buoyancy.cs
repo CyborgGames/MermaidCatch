@@ -4,19 +4,11 @@ namespace MermaidCatch {
 	
 	public class Buoyancy : MonoBehaviour
 	{
-		
-		// The rigidbody of the buoyant object
-		Rigidbody2D rigidbody;
-		
+				
 		// The force of buoyancy
 		float force = 1.5f;
 		
-		const float WATERLINE_Y = 2f;
-		
-		void Start()
-		{
-			rigidbody = GetComponent<Rigidbody2D>();
-		}
+		const float WATERLINE_Y = 2f;		
 
 		void FixedUpdate()
 		{
@@ -30,11 +22,11 @@ namespace MermaidCatch {
 		
 		// If below the water level, float
 		void Float() {
-			rigidbody.AddForce(transform.up * force);
+			GetComponent<Rigidbody>().AddForce(transform.up * force);
 		}
 
 		void Sink() {
-			rigidbody.AddForce(transform.up * -force);
+			GetComponent<Rigidbody>().AddForce(transform.up * -force);
 		}
 		
 	}
