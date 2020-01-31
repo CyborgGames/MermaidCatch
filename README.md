@@ -1,10 +1,6 @@
 # Mermaid Catch
 
-An underwater Pong clone.
-
-## Requirements
-
-Requires Unity 2019.3.
+An underwater Pong clone built for #MerMay 2019. Polished and released on January 2019.
 
 ## Credits
 
